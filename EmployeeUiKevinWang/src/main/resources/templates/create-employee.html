@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th=http://thymeleaf.org/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Employee</title>
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h2>Add a new Contact</h2>
+        <form method="post" th:action="@{/createEmployee}" th:object="${employee}">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" th:field="*{firstName}" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" th:field="*{lastName}" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="salary">Salary:</label>
+                <input type="text" class="form-control" th:field="*{salary}" id="salary" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" th:field="*{state}" id="state" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" class="form-control" th:field="*{country}" id="country" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        <a class="btn btn-secondary mt-3" th:href="@{/}">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th=http://thymeleaf.org/>
+<head>
+<meta charset="UTF-8">
+<title>Edit</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h2>Edit contact</h2>
+  <form th:object="${employee}" method="post" th:action="@{/updateEmployee}">
+    <div class="form-group">
+    <input type="hidden" th:field="*{id}"/>
+      <label for="firstName">First Name:</label>
+      <input type="text" th:field="*{firstName}" class="form-control" id="firstName" required/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" th:field="*{lastName}" class="form-control" id="lastName" required/>
+    </div>
+    <div class="form-group">
+      <label for="firstName">Salary:</label>
+      <input type="text" th:field="*{salary}" class="form-control" id="salary" required/>
+    </div>
+    <div class="form-group">
+      <label for="firstName">State:</label>
+      <input type="text" th:field="*{state}" class="form-control" id="state" required/>
+    </div>
+    <div class="form-group">
+      <label for="firstName">Country:</label>
+      <input type="text" th:field="*{country}" class="form-control" id="country" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+  <a class="btn btn-secondary mt-3" th:href="@{/}">Back to Home</a>
+</div>
+</body>
+</html>
